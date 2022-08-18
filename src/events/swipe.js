@@ -2,9 +2,7 @@ function mouseOutOfBounds(trigger) {
     return trigger.clientY < 0 || trigger.clientX < 0 || trigger.clientX > window.innerWidth || trigger.clientY > window.innerHeight;
 }
 
-
 export class Swipe {
-
     #swipeDuration;
     #swipeDistance;
 
@@ -18,7 +16,6 @@ export class Swipe {
         this.onSelectstartListener = this.reset.bind(this);
 
         this.sequence = [];
-        // this.reset();
         this.owner.addEventListener("mousedown", this.mousedownInitialListener);
         this.userSelect = this.owner.style.userSelect;
         this.owner.style.userSelect = "none";
@@ -27,7 +24,6 @@ export class Swipe {
     reset() {
         this.sequence = [];
         this.stopSequence();
-        // this.#updateState();
     }
 
     #updateState(e) {
@@ -47,8 +43,7 @@ export class Swipe {
     }
 
     onMousemove(e) {
-        if (mouseOutOfBounds(e))
-            this.reset();
+        if (mouseOutOfBounds(e)) this.reset();
         this.#updateState(e);
     }
 
