@@ -57,7 +57,6 @@ export class Swipe {
         let swipeStartY = this.sequence[0].y - this.owner.offsetTop;
         let swipeDistX = swipeStartX - e.x;
         let swipeDistY = swipeStartY - e.y;
-
         let direction;
 
         if (Math.abs(swipeDistX) > Math.abs(swipeDistY) && Math.abs(swipeDistX) > this.#swipeDistance)
