@@ -73,9 +73,6 @@ export class Swipe {
         this.reset();
     }
 
-    onBlur() {
-
-    }
 
     startSequence() {
         this.#swipeDuration = parseInt(this.owner.getAttribute("pointer-duration")) || 50;
